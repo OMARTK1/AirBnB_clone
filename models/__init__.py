@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""The initialization of the models package"""
+"""It represent the initialization of the models package"""
 from models.engine.file_storage import FileStorage
 
 storage = FileStorage()
