@@ -14,7 +14,8 @@ class FileStorage:
     """a class that represent an abstracted storage engine.
 
     attribute:
-        __file_paths (str): represent the name of the file to save objects on it
+        __file_paths (str): represent the name of
+                            the file to save objects on it
         __objects (dict): it's dictionary of instantiated  object
     """
     __file_path = "file.json"
@@ -37,7 +38,9 @@ class FileStorage:
             json.dump(obj_dict, f)
 
     def reload(self):
-        """it deserialize JSONfile "__file_path" to "__objects", if existing."""
+        """it deserialize JSONfile "__file_path"
+            to "__objects", if existing
+        """
         try:
             with open(FileStorage.__file_path) as f:
                 objdict = json.load(f)
