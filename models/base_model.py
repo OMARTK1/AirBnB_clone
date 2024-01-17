@@ -1,20 +1,23 @@
 #!/usr/bin/python3
 """It defines the BaseModel class for the AirBnB console project."""
-from models import storage
 from datetime import datetime
 from uuid import uuid4
 
 
 class BaseModel:
-    """it represents the fundamental base class for all project models."""
+    """Represents the BaseModel of the HBnB project."""
+    def __init__(self, *args, **kwargs):
+        """Represents the BaseModel of the HBnB project"""
 
     def __init__(self, *args, **kwargs):
-        """This initialize a new BaseModel instance.
+        """It initializes a new BaseModel
 
         Args:
-            *args (any): Unused.
-            **kwargs (dict): Key/value pairs of attributes.
+            *args (any): Unused
+            **kwargs (dict): Key/value pairs of attributes
         """
+        from models import storage
+
         time_format = "%Y-%m-%dT%H:%M:%S.%f"
         self.id = str(uuid4())
         self.created_at = datetime.today()
@@ -29,9 +32,9 @@ class BaseModel:
             storage.new(self)
 
     def to_dict(self):
-        """It returns a dictionary representation of the BaseModel instance.
+        """It returns a dictionary representation of the BaseModel instance
 
-        Includes the key/value pair '__class__' representing the class name.
+        Includes the key/value pair '__class__' representing the class name
         """
         result_dict = self.__dict__.copy()
         result_dict["created_at"] = self.created_at.isoformat()
@@ -40,12 +43,13 @@ class BaseModel:
         return result_dict
 
     def __str__(self):
-        """It returns a string representation of the BaseModel instance."""
+        """It returns a string representation of the BaseModel instance"""
         class_name = self.__class__.__name__
         return "[{}] ({}) {}".format(class_name, self.id, self.__dict__)
 
     def save(self):
+        from models import storage
         """It updates updated_at with the current datetime
-        and it saves the instance to storage."""
+        and it saves the instance to storage"""
         self.updated_at = datetime.today()
         storage.save()
