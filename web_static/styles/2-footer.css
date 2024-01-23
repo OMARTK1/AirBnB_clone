@@ -1,5 +1,6 @@
 footer {
     background-color: #00FF00;
+<<<<<<< HEAD
     height: 60px;
     width: 100%;
     position: fixed;
@@ -7,3 +8,13 @@ footer {
     text-align: center;
     line-height: 60px;
 }
+=======
+    height: 60px; width: 100%;
+    position: fixed; bottom: 0;
+    text-align: center; align-items: center;
+    justify-content: center; display: flex; 
+  }
+  footer span {
+    color: #050505;
+  }
+>>>>>>> 74838169bf9b936fd3ba2fb46cec2465cde2077e
