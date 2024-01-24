@@ -1,11 +1,4 @@
 header {
-<<<<<<< HEAD
-  color: white;
-  height: 70px;
-  width: 100%;
-  border-bottom: 1px #CCCCCC;
-}
-=======
     background-color: white;;
     height: 70px;
     width: 100%;
@@ -21,4 +14,3 @@ header .logo {
     padding-left: 20px;
 }
 
->>>>>>> 74838169bf9b936fd3ba2fb46cec2465cde2077e
